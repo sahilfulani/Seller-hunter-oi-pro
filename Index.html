@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Seller Hunter OI Pro</title>
+<style>
+body {
+  margin:0;
+  background:#08111f;
+  color:white;
+  font-family:Arial,sans-serif;
+  padding:18px;
+}
+h1 {color:#35d6a0;text-align:center}
+.sub {text-align:center;color:#9aabc0}
+.tabs {display:flex;gap:10px;margin:22px 0}
+button {
+  flex:1;padding:14px;border:0;border-radius:10px;
+  background:#1d2b40;color:white;font-weight:bold;
+}
+button.active {background:#087f65}
+.card {
+  background:#142238;padding:17px;border-radius:14px;
+  margin:12px 0;border:1px solid #263b55;
+}
+.grid {display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.green {color:#35d6a0}
+.red {color:#ff667a}
+.yellow {color:#ffce61}
+.big {font-size:23px;font-weight:bold}
+small {color:#9aabc0}
+.status {text-align:center;color:#ffce61}
+</style>
+</head>
+<body>
+<h1>SELLER HUNTER</h1>
+<p class="sub">OI PRO • NIFTY & SENSEX</p>
+
+<div class="tabs">
+<button class="active" onclick="show('NIFTY',this)">NIFTY</button>
+<button onclick="show('SENSEX',this)">SENSEX</button>
+</div>
+
+<div class="card">
+<small>SELECTED INDEX</small>
+<h2 id="index">NIFTY</h2>
+<div class="status">API NOT CONNECTED</div>
+<p>Live market dataની રાહ જોઈ રહ્યા છીએ.</p>
+</div>
+
+<div class="grid">
+<div class="card">
+<small>CALL OI</small>
+<div class="big">--</div>
+<p class="green">CE WRITING</p>
+</div>
+<div class="card">
+<small>PUT OI</small>
+<div class="big">--</div>
+<p class="green">PE WRITING</p>
+</div>
+<div class="card">
+<small>MARKET SIGNAL</small>
+<div class="big yellow">WAIT</div>
+</div>
+<div class="card">
+<small>SELLER TRAP</small>
+<div class="big">--</div>
+</div>
+</div>
+
+<div class="card">
+<h3>TRADE PLAN</h3>
+<p>Entry: --</p>
+<p>Stop Loss: --</p>
+<p>Target: --</p>
+<small>Live API જોડાયા પછી જ આ વિગતો આવશે.</small>
+</div>
+
+<div class="card">
+<h3>DATA STATUS</h3>
+<p>Option Chain: Not Connected</p>
+<p>Open Interest: Not Connected</p>
+<p>Price Action: Not Connected</p>
+</div>
+
+<script>
+function show(name,btn) {
+ document.getElementById('index').innerText=name;
+ document.querySelectorAll('button').forEach(b=>b.classList.remove('active'));
+ btn.classList.add('active');
+}
+</script>
+</body>
+</html>
